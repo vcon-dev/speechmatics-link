@@ -161,6 +161,8 @@ class SpeechmaticsClient:
             SpeechmaticsAuthError: If API key is invalid
             SpeechmaticsError: If job submission fails
         """
+        import json as json_module
+        
         if config is None:
             config = TranscriptionConfig()
         
@@ -176,9 +178,15 @@ class SpeechmaticsClient:
         logger.info(f"Submitting transcription job for: {audio_url}")
         
         try:
+            # Speechmatics API requires multipart/form-data
+            # The config is sent as a JSON string in the 'config' field
+            files = {
+                'config': (None, json_module.dumps(job_config), 'application/json')
+            }
+            
             response = self._session.post(
                 url,
-                json=job_config,
+                files=files,
                 timeout=self.timeout
             )
             
@@ -202,7 +210,7 @@ class SpeechmaticsClient:
         except requests.HTTPError as e:
             error_detail = ""
             try:
-                error_detail = e.response.json().get("detail", str(e))
+                error_detail = e.response.json().get("message", str(e))
             except Exception:
                 error_detail = str(e)
             raise SpeechmaticsError(f"Failed to submit job: {error_detail}") from e

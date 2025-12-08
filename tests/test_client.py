@@ -153,6 +153,8 @@ class TestSubmitJob:
     @patch('speechmatics_vcon_link.client.requests.Session')
     def test_submit_job_with_config(self, mock_session_class, api_key, mock_response):
         """Test job submission with custom config."""
+        import json
+        
         mock_session = MagicMock()
         mock_session.post.return_value = mock_response(
             status_code=200,
@@ -166,8 +168,13 @@ class TestSubmitJob:
         
         assert job_id == "job-456"
         call_args = mock_session.post.call_args
-        json_payload = call_args.kwargs.get("json", {})
-        assert json_payload["transcription_config"]["language"] == "fr"
+        # Config is sent as multipart file, extract and parse it
+        files = call_args.kwargs.get("files", {})
+        config_tuple = files.get("config")
+        assert config_tuple is not None
+        config_json = json.loads(config_tuple[1])
+        assert config_json["transcription_config"]["language"] == "fr"
+        assert config_json["transcription_config"]["diarization"] == "speaker"
     
     @patch('speechmatics_vcon_link.client.requests.Session')
     def test_submit_job_auth_error(self, mock_session_class, api_key, mock_response):
