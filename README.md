@@ -1,5 +1,10 @@
 # Speechmatics vCon Link
 
+[![Tests](https://github.com/vcon-dev/speechmatics-link/actions/workflows/tests.yml/badge.svg)](https://github.com/vcon-dev/speechmatics-link/actions/workflows/tests.yml)
+[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 A vCon server link for transcribing audio dialogs using the [Speechmatics](https://www.speechmatics.com/) API. This link processes vCon objects and stores transcription results in both Speechmatics native format and the standardized [World Transcription Format (WTF)](https://datatracker.ietf.org/doc/draft-howe-vcon-wtf-extension/).
 
 ## Features
@@ -304,6 +309,33 @@ speechmatics-link/
 - Verify package is installed: `pip list | grep speechmatics`
 - Check module name in config matches: `speechmatics_vcon_link`
 - Restart vcon-server after installation
+
+## CI/CD
+
+This project uses GitHub Actions for continuous integration:
+
+- **Unit Tests**: Run on every push and PR (Python 3.12 and 3.13)
+- **Code Formatting**: Checked with Black
+- **Integration Tests**: Run on main branch pushes (requires `SPEECHMATICS_API_KEY` secret)
+- **Coverage**: Uploaded to Codecov
+
+### Setting Up Secrets
+
+For integration tests to run in CI, add the following secrets to your GitHub repository:
+
+1. `SPEECHMATICS_API_KEY` - Your Speechmatics API key
+2. `CODECOV_TOKEN` - (Optional) Codecov token for coverage reports
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Run tests (`pytest tests/ -v`)
+5. Format code (`black speechmatics_vcon_link/ tests/`)
+6. Commit your changes (`git commit -m 'Add amazing feature'`)
+7. Push to the branch (`git push origin feature/amazing-feature`)
+8. Open a Pull Request
 
 ## License
 
