@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "speechmatics-vcon-link"
+version = "0.1.0"
+description = "A vCon server link for Speechmatics transcription with WTF format support"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+authors = [
+    {name = "Thomas McCarthy-Howe", email = "ghostofbasho@gmail.com"}
+]
+license = {text = "MIT"}
+keywords = ["vcon", "link", "speechmatics", "transcription", "wtf"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+dependencies = [
+    "vcon>=0.1.0",
+    "redis>=4.6.0",
+    "requests>=2.31.0",
+    "tenacity>=8.2.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=24.0.0",
+    "responses>=0.25.0",
+]
+
+[tool.setuptools]
+packages = ["speechmatics_vcon_link"]
+
+[tool.setuptools.package-data]
+"*" = ["*.md", "*.txt"]
+
+[tool.black]
+line-length = 120
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+

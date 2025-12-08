@@ -1,0 +1,108 @@
+{
+  "transcript": {
+    "text": "Hello, this is Alice from customer service. How can I help you? Hi Alice, I need help.",
+    "language": "en-US",
+    "duration": 7.8,
+    "confidence": 0.97
+  },
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.5,
+      "end": 3.5,
+      "text": "Hello, this is Alice from customer service.",
+      "confidence": 0.97,
+      "speaker": "S1",
+      "words": [0, 1, 2, 3, 4, 5, 6]
+    },
+    {
+      "id": 1,
+      "start": 4.0,
+      "end": 5.3,
+      "text": "How can I help you?",
+      "confidence": 0.98,
+      "speaker": "S1",
+      "words": [7, 8, 9, 10, 11]
+    },
+    {
+      "id": 2,
+      "start": 6.0,
+      "end": 7.8,
+      "text": "Hi Alice, I need help.",
+      "confidence": 0.96,
+      "speaker": "S2",
+      "words": [12, 13, 14, 15, 16]
+    }
+  ],
+  "words": [
+    {
+      "id": 0,
+      "start": 0.5,
+      "end": 0.8,
+      "text": "Hello",
+      "confidence": 0.98,
+      "speaker": "S1",
+      "is_punctuation": false
+    },
+    {
+      "id": 1,
+      "start": 0.9,
+      "end": 1.1,
+      "text": "this",
+      "confidence": 0.97,
+      "speaker": "S1",
+      "is_punctuation": false
+    }
+  ],
+  "speakers": {
+    "S1": {
+      "id": "S1",
+      "label": "Speaker S1",
+      "segments": [0, 1],
+      "total_time": 4.3,
+      "confidence": 0.97
+    },
+    "S2": {
+      "id": "S2",
+      "label": "Speaker S2",
+      "segments": [2],
+      "total_time": 1.7,
+      "confidence": 0.96
+    }
+  },
+  "metadata": {
+    "created_at": "2025-01-02T12:15:30Z",
+    "processed_at": "2025-01-02T12:16:35Z",
+    "provider": "speechmatics",
+    "model": "enhanced",
+    "processing_time": 12.5,
+    "audio": {
+      "duration": 7.8,
+      "format": "wav"
+    },
+    "options": {
+      "language": "en",
+      "operating_point": "enhanced",
+      "diarization": true
+    }
+  },
+  "quality": {
+    "audio_quality": "high",
+    "background_noise": 0.0,
+    "multiple_speakers": true,
+    "overlapping_speech": false,
+    "silence_ratio": 0.15,
+    "average_confidence": 0.97,
+    "low_confidence_words": 0,
+    "processing_warnings": []
+  },
+  "extensions": {
+    "speechmatics": {
+      "job": {
+        "id": "test-job-123"
+      },
+      "format": "2.9"
+    }
+  }
+}
+
