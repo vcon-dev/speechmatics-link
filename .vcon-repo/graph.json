@@ -1,0 +1,637 @@
+{
+  "schema_version": "1.0.0",
+  "repo": "speechmatics-link",
+  "repo_version": "0.1.0",
+  "archetype": "python-library",
+  "generated_at": "2026-04-16T15:15:45.366617+00:00",
+  "stats": {
+    "node_count": 86,
+    "edge_count": 5
+  },
+  "nodes": [
+    {
+      "id": "dependency:vcon",
+      "type": "dependency",
+      "name": "vcon",
+      "file": "pyproject.toml"
+    },
+    {
+      "id": "dependency:redis",
+      "type": "dependency",
+      "name": "redis",
+      "file": "pyproject.toml"
+    },
+    {
+      "id": "dependency:requests",
+      "type": "dependency",
+      "name": "requests",
+      "file": "pyproject.toml"
+    },
+    {
+      "id": "dependency:tenacity",
+      "type": "dependency",
+      "name": "tenacity",
+      "file": "pyproject.toml"
+    },
+    {
+      "id": "function:pytest_addoption",
+      "type": "function",
+      "name": "pytest_addoption",
+      "file": "tests/conftest.py",
+      "line": 6
+    },
+    {
+      "id": "function:pytest_configure",
+      "type": "function",
+      "name": "pytest_configure",
+      "file": "tests/conftest.py",
+      "line": 16
+    },
+    {
+      "id": "function:pytest_collection_modifyitems",
+      "type": "function",
+      "name": "pytest_collection_modifyitems",
+      "file": "tests/conftest.py",
+      "line": 21
+    },
+    {
+      "id": "function:api_key",
+      "type": "function",
+      "name": "api_key",
+      "file": "tests/test_client.py",
+      "line": 20
+    },
+    {
+      "id": "function:client",
+      "type": "function",
+      "name": "client",
+      "file": "tests/test_client.py",
+      "line": 26
+    },
+    {
+      "id": "function:mock_response",
+      "type": "function",
+      "name": "mock_response",
+      "file": "tests/test_client.py",
+      "line": 32
+    },
+    {
+      "id": "class:TestSpeechmaticsClientInit",
+      "type": "class",
+      "name": "TestSpeechmaticsClientInit",
+      "file": "tests/test_client.py",
+      "line": 48
+    },
+    {
+      "id": "class:TestTranscriptionConfig",
+      "type": "class",
+      "name": "TestTranscriptionConfig",
+      "file": "tests/test_client.py",
+      "line": 83
+    },
+    {
+      "id": "class:TestBuildConfig",
+      "type": "class",
+      "name": "TestBuildConfig",
+      "file": "tests/test_client.py",
+      "line": 105
+    },
+    {
+      "id": "class:TestSubmitJob",
+      "type": "class",
+      "name": "TestSubmitJob",
+      "file": "tests/test_client.py",
+      "line": 133
+    },
+    {
+      "id": "class:TestGetJobStatus",
+      "type": "class",
+      "name": "TestGetJobStatus",
+      "file": "tests/test_client.py",
+      "line": 195
+    },
+    {
+      "id": "class:TestGetTranscript",
+      "type": "class",
+      "name": "TestGetTranscript",
+      "file": "tests/test_client.py",
+      "line": 222
+    },
+    {
+      "id": "class:TestWaitForCompletion",
+      "type": "class",
+      "name": "TestWaitForCompletion",
+      "file": "tests/test_client.py",
+      "line": 250
+    },
+    {
+      "id": "class:TestTranscribe",
+      "type": "class",
+      "name": "TestTranscribe",
+      "file": "tests/test_client.py",
+      "line": 298
+    },
+    {
+      "id": "class:TestDeleteJob",
+      "type": "class",
+      "name": "TestDeleteJob",
+      "file": "tests/test_client.py",
+      "line": 315
+    },
+    {
+      "id": "class:TestJobStatus",
+      "type": "class",
+      "name": "TestJobStatus",
+      "file": "tests/test_client.py",
+      "line": 345
+    },
+    {
+      "id": "function:fixtures_path",
+      "type": "function",
+      "name": "fixtures_path",
+      "file": "tests/test_converter.py",
+      "line": 25
+    },
+    {
+      "id": "function:sample_speechmatics_response",
+      "type": "function",
+      "name": "sample_speechmatics_response",
+      "file": "tests/test_converter.py",
+      "line": 31
+    },
+    {
+      "id": "function:minimal_response",
+      "type": "function",
+      "name": "minimal_response",
+      "file": "tests/test_converter.py",
+      "line": 38
+    },
+    {
+      "id": "function:empty_response",
+      "type": "function",
+      "name": "empty_response",
+      "file": "tests/test_converter.py",
+      "line": 55
+    },
+    {
+      "id": "class:TestNormalizeConfidence",
+      "type": "class",
+      "name": "TestNormalizeConfidence",
+      "file": "tests/test_converter.py",
+      "line": 60
+    },
+    {
+      "id": "class:TestExtractLanguageCode",
+      "type": "class",
+      "name": "TestExtractLanguageCode",
+      "file": "tests/test_converter.py",
+      "line": 84
+    },
+    {
+      "id": "class:TestCalculateDuration",
+      "type": "class",
+      "name": "TestCalculateDuration",
+      "file": "tests/test_converter.py",
+      "line": 113
+    },
+    {
+      "id": "class:TestCalculateAverageConfidence",
+      "type": "class",
+      "name": "TestCalculateAverageConfidence",
+      "file": "tests/test_converter.py",
+      "line": 127
+    },
+    {
+      "id": "class:TestCountLowConfidenceWords",
+      "type": "class",
+      "name": "TestCountLowConfidenceWords",
+      "file": "tests/test_converter.py",
+      "line": 153
+    },
+    {
+      "id": "class:TestBuildTranscriptObject",
+      "type": "class",
+      "name": "TestBuildTranscriptObject",
+      "file": "tests/test_converter.py",
+      "line": 179
+    },
+    {
+      "id": "class:TestBuildSegments",
+      "type": "class",
+      "name": "TestBuildSegments",
+      "file": "tests/test_converter.py",
+      "line": 204
+    },
+    {
+      "id": "class:TestBuildWords",
+      "type": "class",
+      "name": "TestBuildWords",
+      "file": "tests/test_converter.py",
+      "line": 239
+    },
+    {
+      "id": "class:TestBuildSpeakers",
+      "type": "class",
+      "name": "TestBuildSpeakers",
+      "file": "tests/test_converter.py",
+      "line": 276
+    },
+    {
+      "id": "class:TestBuildMetadata",
+      "type": "class",
+      "name": "TestBuildMetadata",
+      "file": "tests/test_converter.py",
+      "line": 307
+    },
+    {
+      "id": "class:TestBuildQuality",
+      "type": "class",
+      "name": "TestBuildQuality",
+      "file": "tests/test_converter.py",
+      "line": 336
+    },
+    {
+      "id": "class:TestConvertToWtf",
+      "type": "class",
+      "name": "TestConvertToWtf",
+      "file": "tests/test_converter.py",
+      "line": 372
+    },
+    {
+      "id": "class:TestWtfFormatCompliance",
+      "type": "class",
+      "name": "TestWtfFormatCompliance",
+      "file": "tests/test_converter.py",
+      "line": 480
+    },
+    {
+      "id": "function:api_key",
+      "type": "function",
+      "name": "api_key",
+      "file": "tests/test_integration.py",
+      "line": 36
+    },
+    {
+      "id": "function:client",
+      "type": "function",
+      "name": "client",
+      "file": "tests/test_integration.py",
+      "line": 45
+    },
+    {
+      "id": "function:sample_audio_url",
+      "type": "function",
+      "name": "sample_audio_url",
+      "file": "tests/test_integration.py",
+      "line": 51
+    },
+    {
+      "id": "class:TestSpeechmaticsClientIntegration",
+      "type": "class",
+      "name": "TestSpeechmaticsClientIntegration",
+      "file": "tests/test_integration.py",
+      "line": 57
+    },
+    {
+      "id": "class:TestWtfConverterIntegration",
+      "type": "class",
+      "name": "TestWtfConverterIntegration",
+      "file": "tests/test_integration.py",
+      "line": 123
+    },
+    {
+      "id": "class:TestEndToEndIntegration",
+      "type": "class",
+      "name": "TestEndToEndIntegration",
+      "file": "tests/test_integration.py",
+      "line": 185
+    },
+    {
+      "id": "function:fixtures_path",
+      "type": "function",
+      "name": "fixtures_path",
+      "file": "tests/test_link.py",
+      "line": 27
+    },
+    {
+      "id": "function:sample_speechmatics_response",
+      "type": "function",
+      "name": "sample_speechmatics_response",
+      "file": "tests/test_link.py",
+      "line": 33
+    },
+    {
+      "id": "function:sample_vcon_dict",
+      "type": "function",
+      "name": "sample_vcon_dict",
+      "file": "tests/test_link.py",
+      "line": 40
+    },
+    {
+      "id": "function:sample_vcon_with_transcription",
+      "type": "function",
+      "name": "sample_vcon_with_transcription",
+      "file": "tests/test_link.py",
+      "line": 63
+    },
+    {
+      "id": "function:mock_vcon_class",
+      "type": "function",
+      "name": "mock_vcon_class",
+      "file": "tests/test_link.py",
+      "line": 79
+    },
+    {
+      "id": "function:mock_redis",
+      "type": "function",
+      "name": "mock_redis",
+      "file": "tests/test_link.py",
+      "line": 86
+    },
+    {
+      "id": "class:TestDefaultOptions",
+      "type": "class",
+      "name": "TestDefaultOptions",
+      "file": "tests/test_link.py",
+      "line": 93
+    },
+    {
+      "id": "class:TestGetAudioUrl",
+      "type": "class",
+      "name": "TestGetAudioUrl",
+      "file": "tests/test_link.py",
+      "line": 127
+    },
+    {
+      "id": "class:TestIsAudioDialog",
+      "type": "class",
+      "name": "TestIsAudioDialog",
+      "file": "tests/test_link.py",
+      "line": 160
+    },
+    {
+      "id": "class:TestHasTranscription",
+      "type": "class",
+      "name": "TestHasTranscription",
+      "file": "tests/test_link.py",
+      "line": 190
+    },
+    {
+      "id": "class:TestGetRedisConnection",
+      "type": "class",
+      "name": "TestGetRedisConnection",
+      "file": "tests/test_link.py",
+      "line": 222
+    },
+    {
+      "id": "class:TestGetVconFromRedis",
+      "type": "class",
+      "name": "TestGetVconFromRedis",
+      "file": "tests/test_link.py",
+      "line": 242
+    },
+    {
+      "id": "class:TestStoreVconToRedis",
+      "type": "class",
+      "name": "TestStoreVconToRedis",
+      "file": "tests/test_link.py",
+      "line": 275
+    },
+    {
+      "id": "class:TestRun",
+      "type": "class",
+      "name": "TestRun",
+      "file": "tests/test_link.py",
+      "line": 301
+    },
+    {
+      "id": "class:TestOptionMerging",
+      "type": "class",
+      "name": "TestOptionMerging",
+      "file": "tests/test_link.py",
+      "line": 623
+    },
+    {
+      "id": "function:get_redis_connection",
+      "type": "function",
+      "name": "get_redis_connection",
+      "file": "speechmatics_vcon_link/__init__.py",
+      "line": 74
+    },
+    {
+      "id": "function:get_vcon_from_redis",
+      "type": "function",
+      "name": "get_vcon_from_redis",
+      "file": "speechmatics_vcon_link/__init__.py",
+      "line": 90
+    },
+    {
+      "id": "function:store_vcon_to_redis",
+      "type": "function",
+      "name": "store_vcon_to_redis",
+      "file": "speechmatics_vcon_link/__init__.py",
+      "line": 110
+    },
+    {
+      "id": "function:has_transcription",
+      "type": "function",
+      "name": "has_transcription",
+      "file": "speechmatics_vcon_link/__init__.py",
+      "line": 130
+    },
+    {
+      "id": "function:get_audio_url",
+      "type": "function",
+      "name": "get_audio_url",
+      "file": "speechmatics_vcon_link/__init__.py",
+      "line": 147
+    },
+    {
+      "id": "function:is_audio_dialog",
+      "type": "function",
+      "name": "is_audio_dialog",
+      "file": "speechmatics_vcon_link/__init__.py",
+      "line": 169
+    },
+    {
+      "id": "function:run",
+      "type": "function",
+      "name": "run",
+      "file": "speechmatics_vcon_link/__init__.py",
+      "line": 192
+    },
+    {
+      "id": "class:JobStatus",
+      "type": "class",
+      "name": "JobStatus",
+      "file": "speechmatics_vcon_link/client.py",
+      "line": 25
+    },
+    {
+      "id": "class:TranscriptionConfig",
+      "type": "class",
+      "name": "TranscriptionConfig",
+      "file": "speechmatics_vcon_link/client.py",
+      "line": 35
+    },
+    {
+      "id": "class:SpeechmaticsError",
+      "type": "class",
+      "name": "SpeechmaticsError",
+      "file": "speechmatics_vcon_link/client.py",
+      "line": 47
+    },
+    {
+      "id": "class:SpeechmaticsAuthError",
+      "type": "class",
+      "name": "SpeechmaticsAuthError",
+      "file": "speechmatics_vcon_link/client.py",
+      "line": 53
+    },
+    {
+      "id": "class:SpeechmaticsJobError",
+      "type": "class",
+      "name": "SpeechmaticsJobError",
+      "file": "speechmatics_vcon_link/client.py",
+      "line": 59
+    },
+    {
+      "id": "class:SpeechmaticsTimeoutError",
+      "type": "class",
+      "name": "SpeechmaticsTimeoutError",
+      "file": "speechmatics_vcon_link/client.py",
+      "line": 65
+    },
+    {
+      "id": "class:SpeechmaticsClient",
+      "type": "class",
+      "name": "SpeechmaticsClient",
+      "file": "speechmatics_vcon_link/client.py",
+      "line": 71
+    },
+    {
+      "id": "function:normalize_confidence",
+      "type": "function",
+      "name": "normalize_confidence",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 17
+    },
+    {
+      "id": "function:extract_language_code",
+      "type": "function",
+      "name": "extract_language_code",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 34
+    },
+    {
+      "id": "function:calculate_duration",
+      "type": "function",
+      "name": "calculate_duration",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 72
+    },
+    {
+      "id": "function:calculate_average_confidence",
+      "type": "function",
+      "name": "calculate_average_confidence",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 95
+    },
+    {
+      "id": "function:count_low_confidence_words",
+      "type": "function",
+      "name": "count_low_confidence_words",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 114
+    },
+    {
+      "id": "function:build_transcript_object",
+      "type": "function",
+      "name": "build_transcript_object",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 127
+    },
+    {
+      "id": "function:build_segments",
+      "type": "function",
+      "name": "build_segments",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 163
+    },
+    {
+      "id": "function:build_words",
+      "type": "function",
+      "name": "build_words",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 287
+    },
+    {
+      "id": "function:build_speakers",
+      "type": "function",
+      "name": "build_speakers",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 344
+    },
+    {
+      "id": "function:build_metadata",
+      "type": "function",
+      "name": "build_metadata",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 406
+    },
+    {
+      "id": "function:build_quality",
+      "type": "function",
+      "name": "build_quality",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 453
+    },
+    {
+      "id": "function:convert_to_wtf",
+      "type": "function",
+      "name": "convert_to_wtf",
+      "file": "speechmatics_vcon_link/converter.py",
+      "line": 506
+    },
+    {
+      "id": "config:SPEECHMATICS_API_KEY",
+      "type": "config",
+      "name": "SPEECHMATICS_API_KEY",
+      "file": "speechmatics_vcon_link/__init__.py"
+    },
+    {
+      "id": "document:readme-md",
+      "type": "document",
+      "name": "README.md",
+      "file": "README.md"
+    }
+  ],
+  "edges": [
+    {
+      "from": "class:JobStatus",
+      "to": "class:Enum",
+      "type": "inherits"
+    },
+    {
+      "from": "class:SpeechmaticsError",
+      "to": "class:Exception",
+      "type": "inherits"
+    },
+    {
+      "from": "class:SpeechmaticsAuthError",
+      "to": "class:SpeechmaticsError",
+      "type": "inherits"
+    },
+    {
+      "from": "class:SpeechmaticsJobError",
+      "to": "class:SpeechmaticsError",
+      "type": "inherits"
+    },
+    {
+      "from": "class:SpeechmaticsTimeoutError",
+      "to": "class:SpeechmaticsError",
+      "type": "inherits"
+    }
+  ],
+  "subsystems": []
+}
